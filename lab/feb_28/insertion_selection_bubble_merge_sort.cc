@@ -52,6 +52,7 @@ void MergeSort (Iterator begin, Iterator end, Iterator buffer_begin, Iterator bu
     MergeSort(begin, middle, buffer_begin, buffer_middle);
     MergeSort(middle, end, buffer_middle, buffer_end);
     std::merge(begin, middle, middle, end, buffer_begin);
+    std::copy(buffer_begin, buffer_end, begin);
   }
   return;
 }
