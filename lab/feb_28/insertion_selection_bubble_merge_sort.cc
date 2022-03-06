@@ -49,7 +49,7 @@ void MergeSort (Iterator begin, Iterator end, Iterator buffer_begin, Iterator bu
   {
     auto middle {std::next(begin, size / 2)};
     auto buffer_middle {std::next(buffer_begin, size / 2)};
-    MergeSort(begin, middle, buffer_middle, buffer_end);
+    MergeSort(begin, middle, buffer_begin, buffer_middle);
     MergeSort(middle, end, buffer_middle, buffer_end);
     std::merge(begin, middle, middle, end, buffer_begin);
   }
