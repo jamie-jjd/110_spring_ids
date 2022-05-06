@@ -52,7 +52,6 @@ def IsDAG (graph):
 # def IsDAG (graph):
 #     finished_time = [0] * len(graph)
 #     is_forward = [True] * len(graph)
-#     time = 1
 #     for source in range(1, len(graph)):
 #         if finished_time[source] == 0:
 #             DFS(graph, is_forward, source, finished_time)
