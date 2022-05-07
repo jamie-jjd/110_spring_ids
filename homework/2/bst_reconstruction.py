@@ -16,22 +16,6 @@ def recursive_build(l, r, arr):
             recursive_build(l+1, mid-1, arr),
             recursive_build(mid, r, arr))
 
-def iterative_build(arr):
-    stk = [(0, len(arr)-1)]
-    res = []
-    while len(stk) > 0:
-        l, r = stk.pop();
-        if l <= r:
-            mid = next((i for i in range(l+1, r+1) if arr[i] > arr[l]), r+1)
-            res.append(Node(arr[l]))
-            stk.append((l+1, mid-1))
-            stk.append((mid, r))
-    while len(res) > 1:
-        lchild = res.pop()
-        rchild = res.pop()
-        res[-1].lchild, res[-1].rchild = lchild, rchild
-    return res[0]
-
 def recursive_print_inorder(tree):
     if tree.lchild is not None: recursive_print_inorder(tree.lchild)
     print(tree.data, end=" ")
