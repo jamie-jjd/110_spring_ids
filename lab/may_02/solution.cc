@@ -20,6 +20,7 @@ class BinarySearchTree
 public:
 
   bool Empty () const;
+  bool Size () const;
   void Insert (uint64_t key);
   void Delete (uint64_t key);
   bool Search (uint64_t key) const;
@@ -35,6 +36,7 @@ private:
   void DeletePredecessorInstead (Node* node);
 
   std::unique_ptr<Node> root_;
+  uint64_t size_;
 
 };
 
@@ -43,10 +45,16 @@ bool BinarySearchTree::Empty () const
   return (root_ == nullptr);
 }
 
+uint64_t BinarySearchTree::Size () const
+{
+  return size_;
+}
+
 void BinarySearchTree::Insert (uint64_t key)
 {
   if (!Search(key))
   {
+    ++size_;
     if (!root_) { root_ = std::make_unique<Node>(key); return; }
     Node* node {root_.get()};
     while (node)
@@ -82,6 +90,7 @@ void BinarySearchTree::Delete (uint64_t key)
 {
   if (Search(key))
   {
+    --size_;
     Node* parent {};
     Node* node {root_.get()};
     while (node)

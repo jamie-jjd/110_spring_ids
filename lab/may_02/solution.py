@@ -10,12 +10,17 @@ class Node:
 class BinarySearchTree:
     def __init__ (self):
         self.root = None
+        self.size = 0
 
     def Empty (self):
         return (self.root is None)
 
+    def Size (self):
+        return self.size
+
     def Insert (self, key):
         if not self.Search(key):
+            self.size += 1
             if self.root:
                 node = self.root
                 while node:
@@ -37,6 +42,7 @@ class BinarySearchTree:
 
     def Delete (self, key):
         if self.Search(key):
+            self.size -= 1
             parent = None
             node = self.root
             while node:
