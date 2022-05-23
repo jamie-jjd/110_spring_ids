@@ -11,7 +11,7 @@ class BinarySearchTree:
     def __init__ (self):
         self.root = None
 
-    def Empty ():
+    def Empty (self):
         return (self.root is None)
 
     def Insert (self, key):
