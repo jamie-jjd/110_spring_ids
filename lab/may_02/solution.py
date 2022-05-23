@@ -58,7 +58,7 @@ class BinarySearchTree:
                             else:
                                 parent.right = node.right
                         else:
-                            root = root.right
+                            self.root = self.root.right
                     break
 
     def DeletePredecessorInstead (self, node):
