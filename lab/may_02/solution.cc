@@ -19,6 +19,7 @@ class BinarySearchTree
 {
 public:
 
+  bool Empty () const;
   void Insert (uint64_t key);
   void Delete (uint64_t key);
   bool Search (uint64_t key) const;
@@ -36,6 +37,11 @@ private:
   std::unique_ptr<Node> root_;
 
 };
+
+bool BinarySearchTree::Empty () const
+{
+  return (root_ == nullptr);
+}
 
 void BinarySearchTree::Insert (uint64_t key)
 {
