@@ -11,7 +11,7 @@ int main ()
   uint64_t N, C;
   std::cin >> N >> C;
   std::multiset<uint64_t> calories;
-  for (uint64_t i {}, c; i != N; ++i) { std::cin >> c; ++calories.insert(c); }
+  for (uint64_t i {}, c; i != N; ++i) { std::cin >> c; calories.insert(c); }
   uint64_t count {};
   while (calories.size() > 1)
   {
