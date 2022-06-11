@@ -20,7 +20,7 @@ class BinarySearchTree
 public:
 
   bool Empty () const;
-  bool Size () const;
+  uint64_t Size () const;
   void Insert (uint64_t key);
   void Delete (uint64_t key);
   bool Search (uint64_t key) const;
